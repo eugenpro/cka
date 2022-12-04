@@ -1,0 +1,18 @@
+# /etc/kubernetes/manifests/my-static-pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: my-static-pod
+  name: my-static-pod
+spec:
+  containers:
+  - image: nginx:1.16-alpine
+    name: my-static-pod
+    resources:
+      requests:
+        cpu: 10m
+        memory: 20Mi
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
